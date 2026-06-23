@@ -29,7 +29,7 @@ export default async (request) => {
   const targetUrl = `${TARGET_API}${pathname}${url.search}`;
 
   // 3. Header 过滤逻辑（仅保留白名单内的 Header）
-  const ESSENTIAL_HEADERS = ['content-type', 'accept', 'user-agent'];
+  const ESSENTIAL_HEADERS = ['content-type', 'accept', 'user-agent', 'x-deepinfra-turnstile'];
   const headers = new Headers();
   for (const [key, value] of request.headers.entries()) {
     if (ESSENTIAL_HEADERS.includes(key.toLowerCase())) {
